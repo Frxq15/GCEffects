@@ -1,0 +1,6 @@
+name: GCEffects
+version: '${project.version}'
+main: net.guildcraft.gceffects.GCEffects
+authors: [ Frxq15 ]
+description: GC Effects Plugin
+website: guildcraft.net
