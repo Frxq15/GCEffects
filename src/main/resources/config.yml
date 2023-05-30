@@ -1,4 +1,10 @@
 NO_PERMISSION: '&cI''m sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.'
 TARGET_NOT_FOUND: '&f[&bGCEffects&f] &7The player you specified could not be found.'
-EFFECT_NOT_FOUND: '&f[&bGCEffects&f] &7The effect &b''%effect%'' &7does not exist.'
-SENDING_TEST_EFFECT: '&f[&bGCEffects&f] &7Now playing the &b%effect% &7to player &b%target%&7.'
+EFFECT_NOT_FOUND: '&f[&bGCEffects&f] &7The &b%effect% &7effect does not exist.'
+SENDING_TEST_EFFECT: '&f[&bGCEffects&f] &7Now playing the &b%effect% &7effect to &b%target%&7.'
+
+
+
+ENABLED_EFFECTS:
+  LIGHTNING: true
+  EXPLOSION: true

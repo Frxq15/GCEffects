@@ -1,7 +1,6 @@
 package net.guildcraft.gceffects.data;
 
 import net.guildcraft.gceffects.GCEffects;
-import net.guildcraft.gceffects.effect.Effects;
 import org.bukkit.Bukkit;
 
 import java.util.HashMap;
@@ -11,22 +10,22 @@ import java.util.UUID;
 public class GCPlayer {
     private final UUID uuid;
     private final static Map<UUID, GCPlayer> players = new HashMap();
-    private Effects killEffect;
+    private String killEffect;
 
     public GCPlayer(UUID uuid) {
         this.uuid = uuid;
     }
-    public void setActiveEffect(Effects effect) {
+    public void setActiveEffect(String effect) {
         this.killEffect = effect;
     }
-    public Effects getActiveEffect() {
+    public String getActiveEffect() {
         return killEffect;
     }
     public static void removePlayerData(UUID uuid) { players.remove(uuid); }
     public static GCPlayer getPlayerData(GCEffects plugin, UUID uuid) {
         if (!players.containsKey(uuid)) {
             GCPlayer playerData = new GCPlayer(uuid);
-            playerData.setActiveEffect(Effects.valueOf(plugin.getDataManager().getActiveEffect(uuid)));
+            playerData.setActiveEffect(plugin.getDataManager().getActiveEffect(uuid));
         }
         return players.get(uuid);
     }

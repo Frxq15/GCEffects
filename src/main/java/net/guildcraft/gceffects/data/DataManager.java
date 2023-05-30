@@ -1,7 +1,6 @@
 package net.guildcraft.gceffects.data;
 
 import net.guildcraft.gceffects.GCEffects;
-import net.guildcraft.gceffects.effect.Effects;
 
 import java.util.UUID;
 
@@ -17,8 +16,8 @@ public class DataManager {
     public String getActiveEffect(UUID uuid) {
         return instance.getFileManager().getDataFile().getString(uuid + ".ACTIVE_EFFECT");
     }
-    public void setActiveEffect(UUID uuid, Effects effect) {
-        instance.getFileManager().getDataFile().set(uuid + ".ACTIVE_EFFECT", effect.name());
+    public void setActiveEffect(UUID uuid, String effect) {
+        instance.getFileManager().getDataFile().set(uuid + ".ACTIVE_EFFECT", effect.toUpperCase());
         instance.getFileManager().saveDataFile();
     }
     public boolean playerExists(UUID uuid) {

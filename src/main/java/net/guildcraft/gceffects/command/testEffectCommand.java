@@ -1,8 +1,6 @@
 package net.guildcraft.gceffects.command;
 
 import net.guildcraft.gceffects.GCEffects;
-import net.guildcraft.gceffects.effect.Effects;
-import net.guildcraft.gceffects.effect.KillEffect;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -23,15 +21,14 @@ public class testEffectCommand implements CommandExecutor {
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);
-            if(!instance.getEffectsRegistry().getEffects().contains(args[1].toLowerCase())) {
+            if(!instance.getEffectsRegistry().getEffects().contains(args[1].toUpperCase())) {
                 p.sendMessage(instance.formatMsg("EFFECT_NOT_FOUND")
                         .replace("%effect%", args[1]));
                 return true;
             }
-            Effects effect = Effects.valueOf(args[1]);
-            instance.getEffectsRegistry().executeEffect(target, effect);
+            instance.getEffectsRegistry().executeEffect(target, args[1]);
             p.sendMessage(instance.formatMsg("SENDING_TEST_EFFECT")
-                    .replace("%effect%", effect.name())
+                    .replace("%effect%", args[1].toUpperCase())
                     .replace("%target%", target.getName()));
             return true;
         }
