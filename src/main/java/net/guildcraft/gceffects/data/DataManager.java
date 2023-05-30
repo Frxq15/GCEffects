@@ -1,4 +1,4 @@
-package net.guildcraft.gceffects.file;
+package net.guildcraft.gceffects.data;
 
 import net.guildcraft.gceffects.GCEffects;
 import net.guildcraft.gceffects.effect.Effects;

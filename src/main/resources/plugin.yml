@@ -4,3 +4,8 @@ main: net.guildcraft.gceffects.GCEffects
 authors: [ Frxq15 ]
 description: GC Effects Plugin
 website: guildcraft.net
+
+commands:
+  testeffect:
+    usage: /testeffect <player> <effect>
+    permission: gceffects.testeffect

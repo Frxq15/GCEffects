@@ -1,6 +1,8 @@
 package net.guildcraft.gceffects;
 
-import net.guildcraft.gceffects.file.DataManager;
+import net.guildcraft.gceffects.command.testEffectCommand;
+import net.guildcraft.gceffects.data.DataManager;
+import net.guildcraft.gceffects.effect.EffectsRegistry;
 import net.guildcraft.gceffects.file.FileManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -10,14 +12,19 @@ public final class GCEffects extends JavaPlugin {
     private static GCEffects instance;
     private FileManager fileManager;
     private DataManager dataManager;
+    private EffectsRegistry effectsRegistry;
 
     @Override
     public void onEnable() {
         instance = this;
         fileManager = new FileManager(this);
         dataManager = new DataManager(this);
+        effectsRegistry = new EffectsRegistry();
         saveDefaultConfig();
-        fileManager.createDataFile();
+        getFileManager().createDataFile();
+        effectsRegistry.registerEffects();
+        Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
+        getCommand("testeffect").setExecutor(new testEffectCommand());
         log("Plugin enabled.");
     }
 
@@ -28,6 +35,9 @@ public final class GCEffects extends JavaPlugin {
     public static GCEffects getInstance() { return instance; }
     public FileManager getFileManager() { return fileManager;}
     public DataManager getDataManager() { return dataManager; }
+    public EffectsRegistry getEffectsRegistry() { return effectsRegistry; }
+
     public void log(String msg) { Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA+"[GCEffects] "+msg); }
-    public static String colourMsg(String msg) { return ChatColor.translateAlternateColorCodes('&', msg); }
+    public String colourize(String msg) { return ChatColor.translateAlternateColorCodes('&', msg); }
+    public String formatMsg(String msg) { return ChatColor.translateAlternateColorCodes('&', getInstance().getConfig().getString(msg)); }
 }
