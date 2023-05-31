@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class EffectsRegistry {
-    private List<String> killEffects = new ArrayList<String>();
+    private final List<String> killEffects = new ArrayList<String>();
     private final GCEffects instance = GCEffects.getInstance();
 
     public void registerEffects() {
@@ -35,7 +35,6 @@ public class EffectsRegistry {
             case "EXPLOSION":
                 new ExplosionEffect().performEffect(player);
             default:
-                return;
         }
     }
 }

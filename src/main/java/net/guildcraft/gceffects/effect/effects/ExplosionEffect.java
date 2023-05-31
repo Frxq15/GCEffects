@@ -1,11 +1,7 @@
 package net.guildcraft.gceffects.effect.effects;
 
 import net.guildcraft.gceffects.effect.KillEffect;
-import net.minecraft.server.v1_8_R3.EnumParticle;
-import net.minecraft.server.v1_8_R3.Packet;
-import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 public class ExplosionEffect extends KillEffect {
@@ -22,5 +18,6 @@ public class ExplosionEffect extends KillEffect {
       //  ((CraftPlayer)p).getHandle().playerConnection.sendPacket((Packet)packet);
 
         //need to fix my maven for 1.8
+        //latest
     }
 }
