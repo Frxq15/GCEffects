@@ -6,5 +6,8 @@ SENDING_TEST_EFFECT: '&f[&bGCEffects&f] &7Now playing the &b%effect% &7effect to
 
 
 ENABLED_EFFECTS:
+  TEST: true
   LIGHTNING: true
   EXPLOSION: true
+  FIREWORK: true
+  FLAME: true

@@ -1,8 +1,7 @@
 package net.guildcraft.gceffects.effect;
 
 import net.guildcraft.gceffects.GCEffects;
-import net.guildcraft.gceffects.effect.effects.ExplosionEffect;
-import net.guildcraft.gceffects.effect.effects.LightningEffect;
+import net.guildcraft.gceffects.effect.effects.*;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -22,18 +21,25 @@ public class EffectsRegistry {
     }
     public List<String> getEffects() { return killEffects; }
 
-    public void executeEffect(Player player, String effect) {
+    public void executeEffect(Player player, Player p1, String effect) {
         if(!player.isOnline()) {
             return;
         }
         switch (effect.toUpperCase()) {
             case "NONE":
                 return;
+            case "TEST":
+                new testEffect().performEffect(player, null);
+                return;
             case "LIGHTNING":
-                new LightningEffect().performEffect(player);
+                new LightningEffect().performEffect(player, null);
                 return;
             case "EXPLOSION":
-                new ExplosionEffect().performEffect(player);
+                new ExplosionEffect().performEffect(player, null);
+            case "FIREWORK":
+                new FireworkEffect().performEffect(player, null);
+            case "FLAME":
+                new FlameEffect().performEffect(player, null);
             default:
         }
     }

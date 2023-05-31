@@ -8,7 +8,7 @@ public abstract class KillEffect {
 
     public abstract String getName();
 
-    public abstract void performEffect(Player p);
+    public abstract void performEffect(Player p, Player killer);
 
 
 }

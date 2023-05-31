@@ -1,20 +1,19 @@
 package net.guildcraft.gceffects.effect.effects;
 
 import net.guildcraft.gceffects.effect.KillEffect;
+import org.bukkit.Location;
+import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 
-public class LightningEffect extends KillEffect {
+public class FireworkEffect extends KillEffect {
     @Override
     public String getName() {
-        return "Lightning";
+        return "Firework";
     }
 
     @Override
     public void performEffect(Player p, Player p1) {
-        int i = 0;
-        while(i < 2) {
-            p.getWorld().strikeLightning(p.getLocation());
-            i++;
-        }
+        Location loc = p.getLocation();
+        p.getWorld().spawn(loc, Firework.class);
     }
 }

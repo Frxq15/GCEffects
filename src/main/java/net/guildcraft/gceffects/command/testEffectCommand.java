@@ -26,7 +26,7 @@ public class testEffectCommand implements CommandExecutor {
                         .replace("%effect%", args[1]));
                 return true;
             }
-            instance.getEffectsRegistry().executeEffect(target, args[1]);
+            instance.getEffectsRegistry().executeEffect(target, null, args[1]);
             p.sendMessage(instance.formatMsg("SENDING_TEST_EFFECT")
                     .replace("%effect%", args[1].toUpperCase())
                     .replace("%target%", target.getName()));

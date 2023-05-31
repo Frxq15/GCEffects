@@ -71,5 +71,12 @@
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>local.spigot.nms</groupId>
+            <artifactId>AllSpigotNMS</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/all-spigot-nms.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>
