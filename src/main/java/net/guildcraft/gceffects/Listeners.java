@@ -3,7 +3,11 @@ package net.guildcraft.gceffects;
 import net.guildcraft.gceffects.data.DataManager;
 import net.guildcraft.gceffects.data.GCPlayer;
 import org.bukkit.Bukkit;
+import org.bukkit.Effect;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -33,5 +37,18 @@ public class Listeners implements org.bukkit.event.Listener {
             gcPlayer.uploadPlayerData(instance);
             gcPlayer.removePlayerData(uuid);
         });
+    }
+    @EventHandler
+    public void onDamage(EntityDamageByEntityEvent e) {
+        if(!(e.getDamager() instanceof Player)) return;
+        if(!(e.getEntity() instanceof Player)) return;
+        Player damager = (Player)e.getDamager();
+        Player player = (Player)e.getEntity();
+
+        GCPlayer gcPlayer = GCPlayer.getPlayerData(instance, damager.getUniqueId());
+
+        if(!gcPlayer.getBloodEffect()) return;
+
+        player.getWorld().playEffect(player.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
     }
 }
