@@ -2,11 +2,10 @@ package net.guildcraft.gceffects;
 
 import net.guildcraft.gceffects.data.DataManager;
 import net.guildcraft.gceffects.data.GCPlayer;
-import org.bukkit.Bukkit;
-import org.bukkit.Effect;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -22,14 +21,14 @@ public class Listeners implements org.bukkit.event.Listener {
         this.dataManager = instance.getDataManager();
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onLogin(AsyncPlayerPreLoginEvent e) {
         UUID uuid = e.getUniqueId();
         if(!dataManager.playerExists(uuid)) {
             dataManager.createPlayer(uuid);
         }
     }
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onQuit(PlayerQuitEvent e) {
         Bukkit.getScheduler().runTaskAsynchronously(instance, () -> {
             UUID uuid = e.getPlayer().getUniqueId();
@@ -45,10 +44,13 @@ public class Listeners implements org.bukkit.event.Listener {
         Player damager = (Player)e.getDamager();
         Player player = (Player)e.getEntity();
 
+        if(e.getDamage() <= 0) return;
+        if(player.getGameMode() == GameMode.CREATIVE) return;
+
         GCPlayer gcPlayer = GCPlayer.getPlayerData(instance, damager.getUniqueId());
 
-        if(!gcPlayer.getBloodEffect()) return;
+        if(!gcPlayer.getBloodEffectStatus()) return;
 
-        player.getWorld().playEffect(player.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
+        player.getWorld().playEffect(player.getLocation(), Effect.STEP_SOUND, Material.FIRE);
     }
 }

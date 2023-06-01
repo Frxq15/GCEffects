@@ -66,6 +66,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>ga.strikepractice</groupId>
+            <artifactId>strikepractice-api</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/strikepractice-api.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
