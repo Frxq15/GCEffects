@@ -2,6 +2,10 @@ NO_PERMISSION: '&cI''m sorry, but you do not have permission to perform this com
 TARGET_NOT_FOUND: '&f[&bGCEffects&f] &7The player you specified could not be found.'
 EFFECT_NOT_FOUND: '&f[&bGCEffects&f] &7The &b%effect% &7effect does not exist.'
 SENDING_TEST_EFFECT: '&f[&bGCEffects&f] &7Now playing the &b%effect% &7effect to &b%target%&7.'
+BLOOD_EFFECTS_ENABLED: '&f[&bGCEffects&f] &7You have &aenabled &7your blood effects.'
+BLOOD_EFFECTS_DISABLED: '&f[&bGCEffects&f] &7You have &cdisabled &7your blood effects.'
+BLOOD_EFFECTS_ENABLED_OTHER: '&f[&bGCEffects&f] &7You have &aenabled &7your blood effects for &b%player%&7.'
+BLOOD_EFFECTS_DISABLED_OTHER: '&f[&bGCEffects&f] &7You have &cdisabled &7your blood effects for &b%player%&7.'
 
 
 

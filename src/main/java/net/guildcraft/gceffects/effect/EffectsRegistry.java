@@ -2,6 +2,7 @@ package net.guildcraft.gceffects.effect;
 
 import net.guildcraft.gceffects.GCEffects;
 import net.guildcraft.gceffects.effect.effects.*;
+import net.guildcraft.gceffects.effect.effects.bloodEffects.RedBleedEffect;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -40,6 +41,18 @@ public class EffectsRegistry {
                 new FireworkEffect().performEffect(player, null);
             case "FLAME":
                 new FlameEffect().performEffect(player, null);
+            default:
+        }
+    }
+    public void executeBloodEffect(Player player, Player p1, String effect) {
+        if(!player.isOnline()) {
+            return;
+        }
+        switch (effect.toUpperCase()) {
+            case "NONE":
+                return;
+            case "RED_BLEED":
+                new RedBleedEffect().performEffect(player, p1);
             default:
         }
     }

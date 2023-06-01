@@ -1,5 +1,7 @@
 package net.guildcraft.gceffects;
 
+import ga.strikepractice.StrikePractice;
+import ga.strikepractice.api.StrikePracticeAPI;
 import net.guildcraft.gceffects.data.DataManager;
 import net.guildcraft.gceffects.data.GCPlayer;
 import org.bukkit.*;
@@ -46,11 +48,12 @@ public class Listeners implements org.bukkit.event.Listener {
 
         if(e.getDamage() <= 0) return;
         if(player.getGameMode() == GameMode.CREATIVE) return;
+        if(!StrikePractice.getAPI().isInFight(player)) return;
 
         GCPlayer gcPlayer = GCPlayer.getPlayerData(instance, damager.getUniqueId());
 
         if(!gcPlayer.getBloodEffectStatus()) return;
 
-        player.getWorld().playEffect(player.getLocation(), Effect.STEP_SOUND, Material.FIRE);
+        instance.getEffectsRegistry().executeBloodEffect(damager, player, gcPlayer.getBloodEffect());
     }
 }
