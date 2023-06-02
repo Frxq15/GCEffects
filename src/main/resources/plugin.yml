@@ -9,6 +9,9 @@ commands:
   testeffect:
     usage: /testeffect <player> <effect>
     permission: gceffects.testeffect
+  testbloodeffect:
+    usage: /testbloodeffect <player> <effect>
+    permission: gceffects.testbloodeffect
   togglebloodeffects:
     usage: /togglebloodeffects <player>
     aliases: [togglebe, togglebloodeffect]

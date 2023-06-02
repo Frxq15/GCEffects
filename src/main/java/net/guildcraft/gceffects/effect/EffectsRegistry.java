@@ -75,15 +75,27 @@ public class EffectsRegistry {
                 return;
             case "TEST":
                 new BleedingTestEffect().performEffect(player, p1);
-            case "BLEEDING_RED":
+                return;
+            case "RED":
                 new BleedingRedEffect().performEffect(player, p1);
-            case "BLEEDING_BLUE":
+                return;
+            case "BLUE":
                 new BleedingBlueEffect().performEffect(player, p1);
-            case "BLEEDING_YELLOW":
+                return;
+            case "YELLOW":
                 new BleedingYellowEffect().performEffect(player, p1);
-            case "FLAME_BLOOD":
+                return;
+            case "FLAME":
                 new FlameBloodEffect().performEffect(player, p1);
+                return;
+            case "BEDROCK":
+                new BedrockBloodEffect().performEffect(player, p1);
+                return;
+            case "TNT":
+                new TNTBloodEffect().performEffect(player, p1);
+                return;
             default:
+                return;
         }
     }
 }

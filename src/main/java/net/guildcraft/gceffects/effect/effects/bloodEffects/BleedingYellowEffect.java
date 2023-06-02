@@ -13,6 +13,6 @@ public class BleedingYellowEffect extends BloodEffect {
 
     @Override
     public void performEffect(Player p, Player p1) {
-        p.getWorld().playEffect(p1.getLocation(), Effect.STEP_SOUND, Material.GOLD_BLOCK);
+        p.playEffect(p1.getLocation(), Effect.STEP_SOUND, Material.GOLD_BLOCK);
     }
 }
