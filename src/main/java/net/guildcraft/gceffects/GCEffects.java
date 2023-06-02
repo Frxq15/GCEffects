@@ -1,5 +1,7 @@
 package net.guildcraft.gceffects;
 
+import net.guildcraft.gceffects.command.setBloodEffectCommand;
+import net.guildcraft.gceffects.command.setKillEffectCommand;
 import net.guildcraft.gceffects.command.testEffectCommand;
 import net.guildcraft.gceffects.command.toggleBloodEffectCommand;
 import net.guildcraft.gceffects.data.DataManager;
@@ -27,6 +29,8 @@ public final class GCEffects extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new Listeners(this), this);
         getCommand("testeffect").setExecutor(new testEffectCommand());
         getCommand("togglebloodeffects").setExecutor(new toggleBloodEffectCommand());
+        getCommand("setbloodeffect").setExecutor(new setBloodEffectCommand());
+        getCommand("setkilleffect").setExecutor(new setKillEffectCommand());
         log("Plugin enabled.");
     }
 

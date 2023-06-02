@@ -6,12 +6,29 @@ BLOOD_EFFECTS_ENABLED: '&f[&bGCEffects&f] &7You have &aenabled &7your blood effe
 BLOOD_EFFECTS_DISABLED: '&f[&bGCEffects&f] &7You have &cdisabled &7your blood effects.'
 BLOOD_EFFECTS_ENABLED_OTHER: '&f[&bGCEffects&f] &7You have &aenabled &7your blood effects for &b%player%&7.'
 BLOOD_EFFECTS_DISABLED_OTHER: '&f[&bGCEffects&f] &7You have &cdisabled &7your blood effects for &b%player%&7.'
+EFFECT_LOCKED: '&f[&bGCEffects&f] &7You have not unlocked the &b%effect% &7effect.'
+EFFECT_DISABLED: '&f[&bGCEffects&f] &7The &b%effect% &7effect is currently &cdisabled&7.'
+EFFECT_ALREADY_ACTIVE: '&f[&bGCEffects&f] &7You already have this effect &aenabled&7.'
+EFFECT_ALREADY_ACTIVE_OTHER: '&f[&bGCEffects&f] &b%player% &7already has this effect &aenabled&7.'
+BLOOD_EFFECT_SET: '&f[&bGCEffects&f] &7You set &b%effect% &7as your blood effect.'
+BLOOD_EFFECT_SET_OTHER: '&f[&bGCEffects&f] &7You set &b%effect% &7as &b%player%''s &7blood effect.'
+KILL_EFFECT_SET: '&f[&bGCEffects&f] &7You set &b%effect% &7as your kill effect.'
+KILL_EFFECT_SET_OTHER: '&f[&bGCEffects&f] &7You set &b%effect% &7as &b%player%''s &7kill effect.'
 
 
 
 ENABLED_EFFECTS:
+  NONE: true
   TEST: true
   LIGHTNING: true
   EXPLOSION: true
   FIREWORK: true
   FLAME: true
+
+ENABLED_BLOOD_EFFECTS:
+  NONE: true
+  TEST: true
+  BLEEDING_RED: true
+  BLEEDING_BLUE: true
+  BLEEDING_YELLOW: true
+  FLAME_BLOOD: true

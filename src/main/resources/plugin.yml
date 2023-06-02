@@ -13,3 +13,11 @@ commands:
     usage: /togglebloodeffects <player>
     aliases: [togglebe, togglebloodeffect]
     permission: gceffects.togglebloodeffects
+  setbloodeffect:
+    usage: /setbloodeffect <effect>
+    aliases: [setbe]
+    permission: gceffects.setbloodeffect
+  setkilleffect:
+    usage: /setkilleffect <effect>
+    aliases: [setke]
+    permission: gceffects.setkilleffect

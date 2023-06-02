@@ -21,6 +21,11 @@ public class testEffectCommand implements CommandExecutor {
                 return true;
             }
             Player target = Bukkit.getPlayer(args[0]);
+            if(instance.getEffectsRegistry().getDisabledEffects().contains(args[1].toUpperCase())) {
+                p.sendMessage(instance.formatMsg("EFFECT_DISABLED")
+                        .replace("%effect%", args[1]));
+                return true;
+            }
             if(!instance.getEffectsRegistry().getEffects().contains(args[1].toUpperCase())) {
                 p.sendMessage(instance.formatMsg("EFFECT_NOT_FOUND")
                         .replace("%effect%", args[1]));

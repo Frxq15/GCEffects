@@ -5,14 +5,14 @@ import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-public class RedBleedEffect extends BloodEffect {
+public class BleedingBlueEffect extends BloodEffect {
     @Override
     public String getName() {
-        return "Red Bleed";
+        return "Bleeding Blue";
     }
 
     @Override
     public void performEffect(Player p, Player p1) {
-        p.getWorld().playEffect(p1.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
+        p.getWorld().playEffect(p1.getLocation(), Effect.STEP_SOUND, Material.LAPIS_BLOCK);
     }
 }
